@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Lender</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+
+    <div class="row mt-3 row justify-content-md-center">
+      <div class="col-md-10 col-md-offset-1">
+
+        <h1 class="text-center mb-2">
+          Lender: An example D-App
+        </h1>
+
+        <p class="lead text-center mb-3">
+          Your public key <span class="text-muted" id="admin"></span>
+        </p>
+
+        <div class="row">
+
+          <div class="col">
+            <div class="card">
+
+              <div class="card-header">
+                Add a new item:
+              </div>
+
+              <div class="card-block">
+                <form>
+                  <div class="form-group">
+                    <label for="newItem">Item</label>
+                    <input type="text" class="form-control" id="newItem" aria-describedby="itemHelp" placeholder="Enter the item you wish to add">
+                    <small id="newItemHelp" class="form-text text-muted">Enter the item name.</small>
+                  </div>
+
+                  <a href="#" onclick="addItem()" class="btn btn-primary btn-block">Add Item</a>
+                </form>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card">
+
+              <div class="card-header">
+                Lend an item:
+              </div>
+
+              <div class="card-block">
+                <form>
+                  <div class="form-group">
+                    <label for="lender-key">Lender</label>
+                    <input type="text" class="form-control" id="lender-key" aria-describedby="lender-keyHelp" placeholder="Enter lender's public key">
+                    <small id="lender-keyHelp" class="form-text text-muted">Lender's public key.</small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="item">Select the item you wish you lend out</label>
+                    <select id="item" class="form-control">
+                      <option selected>Please select an item</option>
+                    </select>
+                  </div>
+
+                  <a href="#" onclick="lendItem()" class="btn btn-primary btn-block">Lend Item</a>
+                </form>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-md-10 col-md-offset-2">
+      <h2>Item List</h2>
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Item</th>
+            <th>Lender</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="table"></tbody>
+      </table>
+
+    </div>
+  </div>
+</body>
+<script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="./index.js"></script>
+</html>
